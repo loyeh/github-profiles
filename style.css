@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #212d66;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+input {
+  margin-bottom: 3vmin;
+  background-color: #4e1f7e;
+  outline: none;
+  border: none;
+  color: white;
+  padding: 2vmin 2vmin;
+  border-radius: 1vmin;
+  width: 60%;
+}
+
+::placeholder {
+  color: #ccc;
+}
+
+.container {
+  width: 75%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  background-color: #4e1f7e;
+  padding: 3vmin;
+  border-radius: 20px;
+  padding: 6vmin 1vmin;
+}
+
+.image {
+  width: 15vmin;
+  height: 15vmin;
+  background-image: url("./images/user.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 100%;
+}
+
+.user {
+  width: 70%;
+  margin-left: 2vmin;
+  font-size: 2.5vmin;
+}
+
+.user div {
+  margin-top: 2vmin;
+}
+
+.info,
+.repos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.repos {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  font-size: 2vmin;
+}
+
+.repos div {
+  padding: 1vmin;
+  background-color: #212d66;
+  margin-right: 2vmin;
+  border-radius: 5px;
+}
