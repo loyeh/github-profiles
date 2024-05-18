@@ -30,7 +30,10 @@ userInput.addEventListener("keypress", (e) => {
     const userRepos = getrepos(userName);
     console.log(userInfo, userRepos);
     if (userInfo.data) {
-      container.innerHTML = ` <div class="image"></div>
+      container.innerHTML = ` <div
+      class="image"
+      style="background-image: url('${userInfo.data.avatar_url}')"
+    ></div>
     <div class="user">
       <h3>${userInfo.data.name}</h3>
       <div>

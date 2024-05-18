@@ -46,7 +46,6 @@ input {
 .image {
   width: 15vmin;
   height: 15vmin;
-  background-image: url("./images/user.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 100%;
