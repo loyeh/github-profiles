@@ -32,6 +32,10 @@ input {
   color: #ccc;
 }
 
+h3 {
+  font-size: 4vmin;
+  /* text-align: center; */
+}
 .container {
   width: 75%;
   display: flex;
@@ -78,6 +82,6 @@ input {
 .repos div {
   padding: 1vmin;
   background-color: #212d66;
-  margin-right: 2vmin;
+  margin-right: 1vmin;
   border-radius: 5px;
 }

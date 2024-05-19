@@ -1,36 +1,17 @@
+// const { default: axios } = require("axios");
+
 const userInput = document.querySelector("input");
 const container = document.querySelector(".container");
+let userInfo;
+let userRepos;
 
 async function getUser(name) {
   try {
-    const response = await axios.get(`https://api.github.com/users/${name}`);
-    return response;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-async function getrepos(name) {
-  try {
-    const response = await axios.get(
+    const userInfo = await axios.get(`https://api.github.com/users/${name}`);
+    const userRepos = await axios.get(
       `https://api.github.com/users/${name}/repos`
     );
-    return response;
-  } catch (error) {
-    console.error(error);
-  }
-}
-let myname = "loyeh";
-// getUser(myname);
-userInput.addEventListener("keypress", (e) => {
-  if (e.key == "Enter") {
-    // console.log(e.key);
-    const userName = userInput.value;
-    const userInfo = getUser(userName);
-    const userRepos = getrepos(userName);
-    console.log(userInfo, userRepos);
-    if (userInfo.data) {
-      container.innerHTML = ` <div
+    container.innerHTML = ` <div
       class="image"
       style="background-image: url('${userInfo.data.avatar_url}')"
     ></div>
@@ -53,8 +34,20 @@ userInput.addEventListener("keypress", (e) => {
         <div>${userRepos.data[5].name}</div>
       </div>
     </div>`;
-    } else {
-      container.innerHTML = `<h3>There is no User by This Name</h3>`;
-    }
+
+    console.log(userInfo, userRepos);
+  } catch (error) {
+    console.error(error);
+    container.innerHTML = `<h3>There is no User by This Name</h3>`;
+  }
+}
+
+let myname = "loyeh";
+// getUser(myname);
+userInput.addEventListener("keypress", (e) => {
+  if (e.key == "Enter") {
+    // console.log(e.key);
+    const userName = userInput.value;
+    getUser(userName);
   }
 });
