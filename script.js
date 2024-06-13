@@ -1,5 +1,3 @@
-// const { default: axios } = require("axios");
-
 const userInput = document.querySelector("input");
 const container = document.querySelector(".container");
 let userInfo;
@@ -34,20 +32,16 @@ async function getUser(name) {
         <div>${userRepos.data[5].name}</div>
       </div>
     </div>`;
-
-    console.log(userInfo, userRepos);
   } catch (error) {
     console.error(error);
     container.innerHTML = `<h3>There is no User by This Name</h3>`;
   }
 }
 
-let myname = "loyeh";
-// getUser(myname);
 userInput.addEventListener("keypress", (e) => {
   if (e.key == "Enter") {
-    // console.log(e.key);
     const userName = userInput.value;
     getUser(userName);
+    userInput.value = "";
   }
 });
